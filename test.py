@@ -18,14 +18,15 @@ def fun(j):
 
         else:
             assert k != (len(Cliff_kruas)-1), "no inverse"
-            #return None
-    pool.terminate()
+    return None
+
 if __name__ == '__main__':
     Cliff_inverse_index = np.zeros(11520*11520)
     for i in tqdm(range(len(Cliff_kruas)-1), desc="outter"):
         pool = Pool()
-        res=pool.map(fun,[j for j in range(len(Cliff_kruas)-1)])
-
+        pool.map(fun,[j for j in range(len(Cliff_kruas)-1)])
+        pool.close()
+        pool.join()
 
             #results = [int(_i) for _i in filter(None, results)]
             #assert len(results)==1, 'not one inverse'
@@ -35,5 +36,3 @@ if __name__ == '__main__':
 
     with open('Cliff_inverse_index.pkl', 'wb') as f:
         pickle.dump(Cliff_inverse_index.reshape(11520,11520), f)    
-
-#te
