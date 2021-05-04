@@ -36,3 +36,4 @@ if __name__ == '__main__':
     with open('Cliff_inverse_index.pkl', 'wb') as f:
         pickle.dump(Cliff_inverse_index.reshape(11520,11520), f)    
 
+#te
