@@ -21,18 +21,19 @@ def fun(j):
     return None
 
 if __name__ == '__main__':
-    Cliff_inverse_index = np.zeros(11520*11520)
-    for i in tqdm(range(len(Cliff_kruas)-1), desc="outter"):
+    Cliff_inverse_index = np.zeros(1152*11520)
+    label=int(input('0~9'))*1152
+    for i in tqdm(range(label,label+1152), desc="outter"):
         pool = Pool()
         pool.map(fun,[j for j in range(len(Cliff_kruas)-1)])
         pool.close()
         pool.join()
-
+        with open('Cliff_inverse_index'+str(label/1152)+'.pkl', 'wb') as f:
+            pickle.dump(Cliff_inverse_index, f)  
             #results = [int(_i) for _i in filter(None, results)]
             #assert len(results)==1, 'not one inverse'
             #Cliff_inverse_index += results
 
             
 
-    with open('Cliff_inverse_index.pkl', 'wb') as f:
-        pickle.dump(Cliff_inverse_index.reshape(11520,11520), f)    
+  
