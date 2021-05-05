@@ -3,7 +3,7 @@ import random
 import numpy as np
 import pickle
 from print_large import _print_big_matrix
-from tqdm import tqdm
+from tqdm import tqdm, trange
 from multiprocessing import Process, Pool
 #### 2-qubit pauli basis
 with open('Cliff_kruas.pkl', 'rb') as f:
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     rb_seq={}
     Max=int(input('max sequence number'))
     types=int(input('different types sequence '))
-    for i in range(1,Max):
+    for i in trange(1,Max):
 
         pool=Pool()
         _rb_seq=pool.map(rb_seq_fun,[i]*types)
