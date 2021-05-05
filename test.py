@@ -12,7 +12,7 @@ with open('Cliff_kruas.pkl', 'rb') as f:
 def fun(j):
     for k in range(len(Cliff_kruas)-1):
         l=np.conj(Cliff_kruas[j]@Cliff_kruas[i]).T
-        if np.allclose(np.absolute(np.trace(l@Cliff_kruas[k])), 4):
+        if np.isclose(np.absolute(np.trace(l@Cliff_kruas[k])), 4):
             Cliff_inverse_index[(i%1152)*11520+j]=k
             break
 
