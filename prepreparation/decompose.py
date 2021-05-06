@@ -58,7 +58,15 @@ Prim = [ [[0], np.kron(I, I)],
          [[12], np.kron(I, -Y_2)],
          [[13], CNOT],
          [[14], swap(CNOT)] ]
-
+'''
+gate set 2
+Prim = [ [[0], np.kron(X_2, I)],
+         [[1], np.kron(I, X_2)],
+         [[2], np.kron(Y_2, I)],
+         [[3], np.kron(I, Y_2)],
+         [[4], CNOT],
+         [[5], swap(CNOT)] ]
+'''
 
 '''
 Computational searching all possible clifford elements.
