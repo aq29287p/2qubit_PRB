@@ -12,3 +12,9 @@ H_P_CNOT in kraus and PTM representation
 rb_seq:
 gate number is 1 to 100
 repeat number is 1000
+2-qubit depolarizing: 
+p to do nothing
+1-p to totally mixed state (I, X, Y, Z)^2
+2-qubit dephasing:
+p to do nothing
+1-p to totally dephasing (I, Z)^2
